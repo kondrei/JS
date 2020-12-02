@@ -1,0 +1,92 @@
+<?php
+/**
+ * Customer on-hold order email
+ *
+ * This template can be overridden by copying it to yourtheme/woocommerce/emails/customer-on-hold-order.php.
+ *
+ * HOWEVER, on occasion WooCommerce will need to update template files and you
+ * (the theme developer) will need to copy the new files to your theme to
+ * maintain compatibility. We try to do this as little as possible, but it does
+ * happen. When this occurs the version of the template file will be bumped and
+ * the readme will list any important changes.
+ *
+ * @see https://docs.woocommerce.com/document/template-structure/
+ * @package WooCommerce\Templates\Emails
+ * @version 3.7.0
+ */
+
+defined( 'ABSPATH' ) || exit;
+
+/*
+ * @hooked WC_Emails::email_header() Output the email header
+ */
+do_action( 'woocommerce_email_header', $email_heading, $email ); ?>
+
+<?php /* translators: %s: Customer first name */ ?>
+<p style="font-size:1.5em; font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif"><?php printf( esc_html__( 'Hi %s,', 'woocommerce' ), esc_html( $order->get_billing_first_name() ) ); ?></p>
+<?php
+		$inchiriere_id = 18;		//id categorie inchirieri
+		$vouchere_id = 45;			//id categorie voucher
+		$items = $order->get_items();
+		foreach ( $items as $item ) {
+			$product_cat_id = array();
+			$terms = get_the_terms( $item['product_id'], 'product_cat' );  //preia id_categorie la produsele comandate si le puna in array $product_cat_id
+			foreach ($terms as $term) {
+				$product_cat_id[] = $term->term_id;
+			}
+		}
+			if (in_array($inchiriere_id,$product_cat_id)) {?>
+				<p style="font-size:1.5em; font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif"><?php print_r('Mulțumim ca ați apelat la serviciul de închirieri EXPLORE SKI.');?></p>
+				<p style="font-size:1.5em; font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif"><?php print_r('În scurt timp un reprezentant EXPLORESKI vă va contacta telefonic pentru confirmarea rezervării dumneavoastra. În momentul ridicării, echipamentul va fi setat conform necesităților dumneavoastră.');?></p>
+				<p style="font-size:1.5em; font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif"><?php print_r('Contravaloarea serviciului de închiriere se achită numerar după semnarea contractului de închiriere, la momentul preluarii echipamentului.');?></p>
+				<p style="font-size:1.5em; font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif"><?php print_r('Zona de predare/primire este Piața Romana in București, de Luni pănă Vineri, intre 10:00 – 18:00. În cazuri excepționale, preadarea se poate face și Sâmbată între orele 9:00 – 11:00.');?></p>
+            <?php }
+            if (in_array($vouchere_id,$product_cat_id)) {?>
+				<p style="font-size:1.5em; font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif"><?php print_r('Vă multumim că ați ales voucherele EXPLORESKI.');?></p>
+				<p style="font-size:1.5em; font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif"><?php print_r('După comandă un reprezentant EXPLORESKI are sa vă contacteze telefonic pentru a vă trimite online ( email ) voucherul ales de dumneavoastră. Voucherul este înseriat iar ca o alta modalitate de protecție înainte sa vă fie trimis are sa fie completat și numele destinatarului, asta pentru a împiedica eventualele posibilități de fraudare.');?></p>
+				<p style="font-size:1.5em; font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif"><?php print_r('Termenii şi condițiile serviciilor oferite de ExploreSki în cadrul cursurilor de inițiere în ski touring se aplică şi acestor vouchere.');?></p>
+				<p style="font-size:1.5em; font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif"><?php print_r('Vă mulțumim pentru comanda dumneavoastră.');?></p>
+            <?php }
+             else { ?>
+				<p style="font-size:1.5em; font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif"><?php print_r('Mulțumim ca ați apelat la magazinul online EXPLORE SKI.');?></p>
+				<p style="font-size:1.5em; font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif"><?php print_r('In scurt timp un reprezentant EXPLORESKI vă va contacta telefonic pentru confirmarea comenzii dumneavoastră. După confirmare, pe email veți primi factura fiscală pentru produsul comandat. Livrarea se face cu firma de curierat Fan Courier, iar expediția este suportată integral de Explore Everything SRL.'); ?></p>
+				<p style="font-size:1.5em; font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif"><?php print_r('Pentru Bucuresti si zona metropolitana produsele se pot ridica și personal de la depozitul nostru din Piața Romana de Luni pana Vineri intre orele 10:00 – 18:00.');?></p>				
+			<?php }
+		
+	
+	?>
+
+<p style="font-size:1.5em; font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif"><?php print_r('Mai jos aveți detaliile comenzii dvs.: ') ?></p>
+
+<?php
+
+/*
+ * @hooked WC_Emails::order_details() Shows the order details table.
+ * @hooked WC_Structured_Data::generate_order_data() Generates structured data.
+ * @hooked WC_Structured_Data::output_structured_data() Outputs structured data.
+ * @since 2.5.0
+ */
+do_action( 'woocommerce_email_order_details', $order, $sent_to_admin, $plain_text, $email );
+
+/*
+ * @hooked WC_Emails::order_meta() Shows order meta data.
+ */
+do_action( 'woocommerce_email_order_meta', $order, $sent_to_admin, $plain_text, $email );
+
+/*
+ * @hooked WC_Emails::customer_details() Shows customer details
+ * @hooked WC_Emails::email_address() Shows email address
+ */
+do_action( 'woocommerce_email_customer_details', $order, $sent_to_admin, $plain_text, $email );
+
+/**
+ * Show user-defined additional content - this is set in each email's settings.
+ */
+if ( $additional_content ) {
+	echo wp_kses_post( wpautop( wptexturize( $additional_content ) ) );
+}
+
+/*
+ * @hooked WC_Emails::email_footer() Output the email footer
+ */
+do_action( 'woocommerce_email_footer', $email );
