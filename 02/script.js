@@ -26,6 +26,7 @@ console.log(string.replace('JavaScript','Pyton'))
 //What is character at index 15 in '30 Days Of JavaScript' string? Use charAt() method.
 console.log(string.charAt(15));
 //What is the character code of J in '30 Days Of JavaScript' string using charCodeAt()
+console.log(string.charCodeAt('J'))
 //Use indexOf to determine the position of the first occurrence of a in 30 Days Of JavaScript
 //Use lastIndexOf to determine the position of the last occurrence of a in 30 Days Of JavaScript.
 //Use indexOf to find the position of the first occurrence of the word because in the following sentence:'You cannot end a sentence with because because because is a conjunction'
