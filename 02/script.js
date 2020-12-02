@@ -22,7 +22,7 @@ console.log(string.split(' '))
 //'Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon' split the string at the comma and change it to an array.
 console.log('Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon'.split(','))
 //Change 30 Days Of JavaScript to 30 Days Of Python using replace() method.
-console.log()
+console.log(string.replace('JavaScript','Pyton'))
 //What is character at index 15 in '30 Days Of JavaScript' string? Use charAt() method.
 //What is the character code of J in '30 Days Of JavaScript' string using charCodeAt()
 //Use indexOf to determine the position of the first occurrence of a in 30 Days Of JavaScript
