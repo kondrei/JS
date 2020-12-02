@@ -16,9 +16,13 @@ console.log(string.substr(3,string.length))
 //Check if the string contains a word Script using includes() method
 console.log(string.includes('Script'))
 //Split the string into an array using split() method
+console.log(string.split())
 //Split the string 30 Days Of JavaScript at the space using split() method
+console.log(string.split(' '))
 //'Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon' split the string at the comma and change it to an array.
+console.log('Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon'.split(','))
 //Change 30 Days Of JavaScript to 30 Days Of Python using replace() method.
+console.log()
 //What is character at index 15 in '30 Days Of JavaScript' string? Use charAt() method.
 //What is the character code of J in '30 Days Of JavaScript' string using charCodeAt()
 //Use indexOf to determine the position of the first occurrence of a in 30 Days Of JavaScript
