@@ -30,7 +30,9 @@ console.log(string.charCodeAt('J'))
 //Use indexOf to determine the position of the first occurrence of a in 30 Days Of JavaScript
 console.log(string.indexOf('a'));
 //Use lastIndexOf to determine the position of the last occurrence of a in 30 Days Of JavaScript.
+console.log(string.lastIndexOf('a'))
 //Use indexOf to find the position of the first occurrence of the word because in the following sentence:'You cannot end a sentence with because because because is a conjunction'
+console.log('You cannot end a sentence with because because because is a conjunction'.indexOf('because'))
 //Use lastIndexOf to find the position of the last occurrence of the word because in the following sentence:'You cannot end a sentence with because because because is a conjunction'
 //Use search to find the position of the first occurrence of the word because in the following sentence:'You cannot end a sentence with because because because is a conjunction'
 //Use trim() to remove any trailing whitespace at the beginning and the end of a string.E.g ' 30 Days Of JavaScript '.
