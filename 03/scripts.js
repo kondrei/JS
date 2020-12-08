@@ -1,28 +1,35 @@
 // Day 3: Exercises
 // Exercises: Level 1
 // Declare firstName, lastName, country, city, age, isMarried, year variable and assign value to it and use the typeof operator to check different data types.
+let firstName = 'andrei';
+let lastName = 'dan';
+let country = 'romania'
+let age = 40;
+let isRaining = false;
 
 // Check if type of '10' is equal to 10
-
+console.log('10' === 10);
 // Check if parseInt('9.8') is equal to 10
-
+console.log(parseInt('9.8'))
 // Boolean value is either true or false.
-
+console.log(isRaining)
 // Write three JavaScript statement which provide truthy value.
 // Write three JavaScript statement which provide falsy value.
 // Figure out the result of the following comparison expression first without using console.log(). After you decide the result confirm it using console.log()
 
-// 4 > 3
-// 4 >= 3
-// 4 < 3
-// 4 <= 3
-// 4 == 4
-// 4 === 4
-// 4 != 4
-// 4 !== 4
-// 4 != '4'
-// 4 == '4'
-// 4 === '4'
+// 4 > 3 true
+// 4 >= 3 false
+// 4 < 3 false
+// 4 <= 3 false
+console.log(4<=3)
+// 4 == 4 true
+// 4 === 4 true
+// 4 != 4 false
+// 4 !== 4 false
+// 4 != '4' false
+console.log(4 != '4')
+// 4 == '4' true
+// 4 === '4' false
 // Find the length of python and jargon and make a falsy comparison statement.
 // Figure out the result of the following expressions first without using console.log(). After you decide the result confirm it by using console.log()
 
@@ -48,12 +55,18 @@
 // Find out the numbers of seconds elapsed from January 1, 1970 to now.
 // Exercises: Level 2
 // Write a script that prompt the user to enter base and height of the triangle and calculate an area of a triangle (area = 0.5 x b x h).
-
+let base = 5;
+let height = 4;
+let c = 3;
+let aria = 0.5 * base * height;
+let perimeter = base+height+c;
+console.log(`Aria of triangle is ${aria}`)
+console.log(`perimeter is ${perimeter}`)
 // Enter base: 20
 // Enter height: 10
 // The area of the triangle is 50
 // Write a script that prompt the user to enter side a, side b, and side c of the triangle and and calculate the perimeter of triangle (perimeter = a + b + c)
-
+console.log(`perimeter is ${perimeter}`)
 // Enter side a: 5
 // Enter side b: 4
 // Enter side c: 3
@@ -76,7 +89,7 @@
 // Enter rate per hour: 28
 // Your weekly earning is 1120
 // If the length of your name is greater than 7 say, your name is long else say your name is short.
-
+console.log(firstName.length> 5 ? console.log('your name is long') : console.log('shor'));
 // Compare your first name length and your family name length and you should get this output.
 
 // let firstName = 'Asabeneh'
