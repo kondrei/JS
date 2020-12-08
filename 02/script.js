@@ -121,3 +121,11 @@ const sentence = '%I $am@% a %tea@cher%, &and& I lo%#ve %te@a@ching%;. The@re $i
 let regEx = sentence.match(/[a-z+]/gi);
 console.log(...regEx);
 //Calculate the total annual income of the person by extracting the numbers from the following text. 'He earns 5000 euro from salary per month, 10000 euro annual bonus, 15000 euro online courses per month.'
+string = 'He earns 5000 euro from salary per month, 10000 euro annual bonus, 15000 euro online courses per month.'.match(/\d+/gi);
+
+let total = 0;
+  for (let x of string) {
+      total += parseInt(x);
+  }
+
+  console.log(total);
