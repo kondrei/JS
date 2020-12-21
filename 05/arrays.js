@@ -73,14 +73,23 @@ if (sentence.indexOf(company) != -1) {
   console.log(`${company} NU este in array`)
 }
 // Filter out companies which have more than one 'o' without the filter method
+
 // Sort the array using sort() method
+console.log(itCompanies.sort())
 // Reverse the array using reverse() method
+console.log(itCompanies.reverse())
 // Slice out the first 3 companies from the array
+console.log(itCompanies.slice(0, 3))
 // Slice out the last 3 companies from the array
+console.log(itCompanies.slice(itCompanies.length - 3, itCompanies.length))
 // Slice out the middle IT company or companies from the array
+console.log(itCompanies.slice(Math.round(itCompanies.length / 2), 6))
 // Remove the first IT company from the array
+console.log(itCompanies.pop())
 // Remove the middle IT company or companies from the array
+console.log(itCompanies.slice(itCompanies.length - 3, itCompanies.length))
 // Remove the last IT company from the array
+console.log(itCompanies.push())
 // Remove all IT companies
 // Exercise: Level 2
 // Create a separate countries.js file and store the countries array in to this file, create a separate file web_techs.js and store the webTechs array in to this file. Access both file in main.js file
