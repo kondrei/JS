@@ -26,15 +26,15 @@ const webTechs = [
 // Declare an empty array;
 const emptyArr = [];
 // Declare an array with more than 5 number of elements
-const numbers = [1,2,3,4,5,6,7]
+const numbers = [1, 2, 3, 4, 5, 6, 7]
 // Find the length of your array
 console.log(numbers.length);
 // Get the first item, the middle item and the last item of the array
-console.log('first item',numbers[0]);
-console.log('middle item',numbers[Math.round(numbers.length/2)-1]);
-console.log('last item',numbers[numbers.length-1]);
+console.log('first item', numbers[0]);
+console.log('middle item', numbers[Math.round(numbers.length / 2) - 1]);
+console.log('last item', numbers[numbers.length - 1]);
 // Declare an array called mixedDataTypes, put different data types in the array and find the length of the array. The array size should be greater than 5
-const mixedDataTypes = [1,'doi','trei',[4,5,6],'altceva',9];
+const mixedDataTypes = [1, 'doi', 'trei', [4, 5, 6], 'altceva', 9];
 console.log(mixedDataTypes.length);
 // Declare an array variable name itCompanies and assign initial values Facebook, Google, Microsoft, Apple, IBM, Oracle and Amazon
 const itCompanies = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon'];
@@ -43,28 +43,35 @@ console.log(itCompanies);
 // Print the number of companies in the array
 console.log(itCompanies.length);
 // Print the first company, middle and last company
-console.log('first item',itCompanies[0]);
-console.log('middle item',itCompanies[Math.round(itCompanies.length/2)-1]);
-console.log('last item',itCompanies[itCompanies.length-1]);
+console.log('first item', itCompanies[0]);
+console.log('middle item', itCompanies[Math.round(itCompanies.length / 2) - 1]);
+console.log('last item', itCompanies[itCompanies.length - 1]);
 // Print out each company
 console.log(itCompanies.slice())
 // Change each company name to uppercase one by one and print them out
 itCompanies.forEach(element => {
-    console.log(element.toUpperCase())
+  console.log(element.toUpperCase())
 });
 // Print the array like as a sentence: Facebook, Google, Microsoft, Apple, IBM,Oracle and Amazon are big IT companies.
 let sentence = '';
 for (let x in itCompanies) {
-    console.log(x)
-    if (x == itCompanies.length-1) {        
-        sentence += 'and ' + itCompanies[x];
-    } else {
-        sentence += itCompanies[x] + ', ';
-        
-    }    
+  console.log(x)
+  if (x == itCompanies.length - 1) {
+    sentence += sentence.substring(sentence.length - 2, length);
+    sentence += ' and ' + itCompanies[x];
+  } else {
+    sentence += itCompanies[x] + ', ';
+
+  }
 }
 console.log(sentence)
 // Check if a certain company exists in the itCompanies array. If it exist return the company else return a company is not found
+let company = 'Dacia'
+if (sentence.indexOf(company) != -1) {
+  console.log(`${company} este in array`)
+} else {
+  console.log(`${company} NU este in array`)
+}
 // Filter out companies which have more than one 'o' without the filter method
 // Sort the array using sort() method
 // Reverse the array using reverse() method
