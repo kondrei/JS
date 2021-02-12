@@ -111,22 +111,30 @@ shoppingCart[shoppingCart.indexOf('Tea')] = 'Green Tea';
 console.log(shoppingCart)
 
 // In countries array check if 'Ethiopia' exists in the array if it exists print 'ETHIOPIA'. If it does not exist add to the countries list.
-if(countries.indexOf('Ethiopia'))
+if (countries.indexOf('Ethiopia'))
   console.log(countries[countries.indexOf('Ethiopia')])
-  
-// In the webTechs array check if Sass exists in the array and if it exists print 'Sass is a CSS preprocess'. If it does not exist add Sass to the array and print the array.
 
+// In the webTechs array check if Sass exists in the array and if it exists print 'Sass is a CSS preprocess'. If it does not exist add Sass to the array and print the array.
+if (itCompanies.indexOf('Sass')) {
+  console.log('Sass is a CSS preprocess');
+  console.log(itCompanies);
+} else {
+  itCompanies.push('Sass');
+  console.log(itCompanies);
+}
 // Concatenate the following two variables and store it in a fullStack variable.
 
-// const frontEnd = ['HTML', 'CSS', 'JS', 'React', 'Redux']
-// const backEnd = ['Node','Express', 'MongoDB']
-
-// console.log(fullStack)
+const frontEnd = ['HTML', 'CSS', 'JS', 'React', 'Redux']
+const backEnd = ['Node', 'Express', 'MongoDB']
+let fullStack = frontEnd.concat(backEnd);
+console.log(fullStack)
 // ["HTML", "CSS", "JS", "React", "Redux", "Node", "Express", "MongoDB"]
 // Exercise: Level 3
 // The following is an array of 10 students ages:
 
-// const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
+const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
+console.log(ages.sort());
+console.log(Math.max(...ages))
 // Sort the array and find the min and max age
 // Find the median age(one middle item or two middle items divided by two)
 // Find the average age(all items divided by number of items)
