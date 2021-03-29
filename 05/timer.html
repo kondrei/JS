@@ -18,6 +18,7 @@
     <script>
     const startBtn = document.querySelector('#startBtn');
     const stopBtn =  document.querySelector('.stopBtn');
+    const resetBtn =  document.querySelector('.resetBtn');
     
     startBtn.addEventListener('click', () => {
         alert('start');
@@ -26,6 +27,11 @@
     stopBtn.addEventListener('click', () => {
         alert('stop');
     });
+    
+    resetBtn.addEventListener('click', () => {
+        alert('reset');
+    });
+
       function displayTime() {
         let date = new Date();
         let time = date.toLocaleTimeString();
