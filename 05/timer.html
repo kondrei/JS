@@ -7,6 +7,9 @@
       p {
         font-family: sans-serif;
       }
+      .timer {
+        font-color: red;
+      }
     </style>
   </head>
   <body>
@@ -19,9 +22,11 @@
     const startBtn = document.querySelector('#startBtn');
     const stopBtn =  document.querySelector('.stopBtn');
     const resetBtn =  document.querySelector('.resetBtn');
+    let seconds = 0;
     
     startBtn.addEventListener('click', () => {
-        alert('start');
+        //alert('start now');
+        setInterval(startCounter(),1000);
     });
     
     stopBtn.addEventListener('click', () => {
@@ -39,12 +44,11 @@
       }
 
       const createClock = setInterval(displayTime, 1000);
-      let seconds = 0;
       
-      function start() {
-          seconds++;
-          document.querySelector('timer').textContent = seconds;
-      }
+    function startCounter() {
+        seconds++;
+        document.querySelector('.timer').textContent = seconds;      
+    }
     </script>
   </body>
 </html>
