@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>Simple setInterval clock</title>
+    <style>
+      p {
+        font-family: sans-serif;
+      }
+      .timer {
+        font-color: red;
+      }
+    </style>
+  </head>
+  <body>
+      <button id="startBtn">START</button>
+      <button class="stopBtn">STOP</button>
+      <button class="resetBtn">RESET</button>
+    <p class="clock"></p>
+    <p class="timer"></p>
+    <script>
+    const startBtn = document.querySelector('#startBtn');
+    const stopBtn =  document.querySelector('.stopBtn');
+    const resetBtn =  document.querySelector('.resetBtn');
+    const output = document.querySelector('.timer');
+    let seconds = 0;
+    let cronometru;
+      
+    function startCounter() {
+        
+        
+        seconds++;
+        console.log(seconds);
+        output.textContent = seconds;
+    }
+    
+    startBtn.addEventListener('click', () => {
+        
+        cronometru = setInterval(startCounter,1000);
+        startBtn.disabled = true;
+    });
+    
+    stopBtn.addEventListener('click', () => {
+        clearInterval(cronometru);
+        startBtn.disabled = false;
+        
+    });
+    
+    resetBtn.addEventListener('click', () => {
+        clearInterval(cronometru);
+        startBtn.disabled = false;
+        seconds = 0;
+        startCounter();
+        
+    });
+      function displayTime() {
+        let date = new Date();
+        let time = date.toLocaleTimeString();
+        document.querySelector('.clock').textContent = time;
+      }
+
+      const createClock = setInterval(displayTime, 1000);
+    </script>
+  </body>
+</html>
