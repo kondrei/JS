@@ -26,16 +26,14 @@
     let seconds = 0;
     let cronometru;
       
-    function startCounter() {
-        
-        
+    function startCounter() {        
         seconds++;
+        
         console.log(seconds);
         output.textContent = seconds;
     }
     
-    startBtn.addEventListener('click', () => {
-        
+    startBtn.addEventListener('click', () => {        
         cronometru = setInterval(startCounter,1000);
         startBtn.disabled = true;
     });
