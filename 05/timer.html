@@ -26,19 +26,16 @@
     let seconds = 0;
     let cronometru;
       
-    function startCounter() {        
-        let secs = Math.floor(seconds % 60);
-        let minutes = Math.floor((seconds % 3600)/60);
-        let hours = Math.floor(seconds / 3600);
+    function startCounter() {
         
-        let displaySeconds = (secs < 10) ? '0' + secs : secs;
-        let displayMinutes = (minutes < 10) ? '0' + minutes : minutes;
-        let displayHours = (hours < 10) ? '0' + hours : hours;
-        output.textContent = displayHours + ':' + displayMinutes + ':' + displaySeconds;
+        
         seconds++;
+        console.log(seconds);
+        output.textContent = seconds;
     }
     
-    startBtn.addEventListener('click', () => {        
+    startBtn.addEventListener('click', () => {
+        
         cronometru = setInterval(startCounter,1000);
         startBtn.disabled = true;
     });
@@ -56,6 +53,9 @@
         startCounter();
         
     });
+    //test
+    
+
       function displayTime() {
         let date = new Date();
         let time = date.toLocaleTimeString();
